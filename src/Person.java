@@ -1,4 +1,4 @@
-public class Invoice {
+public class Person {
     /*
         An Invoice shall contain the name, address and contact information
         of the user, a list of items to charge for as shown below.
@@ -14,7 +14,7 @@ public class Invoice {
     final private double PSP = 100;
     final private double PQP = 0.35;
 
-    public Invoice() {
+    public Person() {
         this.questions = 0;
         this.session = 0;
     }
@@ -82,33 +82,16 @@ public class Invoice {
     public void setZip(int zip) {
         this.zip = zip;
     }
-    /*
-        Raven's Invoice
-        To: Dave Wolf
-        12 S. Summit Ave
-        Gaithersburg, MD 20877
-
-        Items:
-        Quantity  Description    Price      Total
-        1         Session        100.00     100.00
-        10        Questions         .35       3.50
-
-        Total Due: $103.50
-
-        Thank you for doing business with Raven.
-     */
-
 
     public void bill(){
         double tsp = getPSP() * getSession();
         double tqp = getPQP() * getQuestions();
         double totalDue = tsp + tqp;
-        System.out.println("**************************************");
+        System.out.println("*****************Receipt*********************");
         System.out.println("Raven's Invoice");
         System.out.println("To:" + getName());
         System.out.println(getAddress());
         System.out.println(getCity() + ", " + getState() + " " + getZip() + "\n");
-        //System.out.println();
         System.out.println("Items:");
         System.out.printf("%8s%15s%8s%8s", "Quantity", "Description", "Price", "Total");
         System.out.println();
@@ -117,6 +100,30 @@ public class Invoice {
         System.out.printf("%4d%20s%10.2f%10.2f", getQuestions(), "Questions ", getPQP(),tqp);
         System.out.println();
         System.out.println("Total Due: " + totalDue);
+    }
+    public int positiveCounter(String [] arr){
+        String [] positive = {"good", "glad", "happy", "relaxed", "accomplished", "alert", "creative"};
+        int positiveWords = 0;
+        for(String x : arr){
+            for(String p : positive){
+                if(x.equalsIgnoreCase(p)){
+                    positiveWords++;
+                }
+            }
+        }
+        return positiveWords;
+    }
 
+    public int negativeCounter(String [] arr){
+        String [] negative = {"bad", "sad", "tired", "angry", "anxious", "hungry", "moody", "afraid"};
+        int negativeWords = 0;
+        for(String x : arr){
+            for(String n : negative){
+                if(x.equalsIgnoreCase(n)){
+                    negativeWords++;
+                }
+            }
+        }
+        return negativeWords;
     }
 }

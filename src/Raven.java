@@ -2,22 +2,6 @@ import java.util.Scanner;
 
 public class Raven {
     public static void main(String[] args) {
-        /*Sample case:
-            Good morning. How are you feeling today?
-            am sad
-            Really! Why you said am sad
-            am hungry
-            Really! Why you said am hungry
-            am in a bad condition right know
-            Really! Why you said am in a bad condition right know
-            never mind am good and bad now
-            I do not get it. Can you tell me more please!
-            sorry am saying am good now
-            Am so happy for you.
-            Anything you want to tell me ?
-            q
-            Thank you for the chat. Have a wonderful day.
-         */
 
         String userInput;
         String userInputArr [];
@@ -61,7 +45,6 @@ public class Raven {
                 System.out.println("I do not get it. Can you tell me more please!");
                 userInput = in.nextLine();
             }
-
         }
         System.out.println("Thank you for the chat. Have a wonderful day.");
     }
@@ -91,22 +74,4 @@ public class Raven {
         }
         return negativeWords;
     }
-
-
-
-    /*
-        while(!(cont.equalsIgnoreCase("q"))) {
-            String []change = cont.split(" ");
-            for (int i = 0; i < change.length ; i++) {
-
-            }
-
-            for (int i = 0; i <change.length ; i++) {
-                System.out.print(change[i] + " ");
-            }
-            System.out.println();
-            System.out.println("Enter your response here or Q to quit:");
-            cont = scanner.nextLine();
-        }
-     */
 }
